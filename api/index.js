@@ -10,11 +10,10 @@ const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
 const router = express.Router();
 const path = require("path");
-const MONGO_URL = "mongodb+srv://admin:praveen@cluster0.de7rx.mongodb.net/FBdb?retryWrites=true&w=majority";
 dotenv.config();
 
 mongoose.connect(
-  MONGO_URL,
+  process.env.MONGO_URL,
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => {
     console.log("Connected to MongoDB");
